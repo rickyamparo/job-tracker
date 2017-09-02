@@ -44,6 +44,7 @@ group :development, :test do
   gem 'launchy'
   gem 'selenium-webdriver'
   gem 'rspec-rails'
+  gem 'orderly'
 end
 
 group :development do
