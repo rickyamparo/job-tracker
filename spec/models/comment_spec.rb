@@ -15,5 +15,12 @@ describe Comment do
         expect(comment).to be_valid
       end
     end
+
+    describe "relationships" do
+      it "belongs to a job" do
+        comment = create(:comment)
+        expect(comment).to respond_to(:job)
+      end
+    end
   end
 end
