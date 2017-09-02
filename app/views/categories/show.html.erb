@@ -1,0 +1,5 @@
+All Jobs Under The <strong><%= @category.title %></strong> Category
+
+<% @category.jobs.each do |job| %>
+  <ul><%= job.title %></ul>
+<% end %>

@@ -13,7 +13,7 @@ class CompaniesController < ApplicationController
       flash[:success] = "#{@company.name} added!"
       redirect_to company_path(@company)
     else
-      render :new
+      redirect_to new_company_path
     end
   end
 
