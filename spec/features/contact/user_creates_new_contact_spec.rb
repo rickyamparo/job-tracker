@@ -4,7 +4,7 @@ describe "User creates new comment for job" do
   scenario "a user uses the comment form to create a new comment" do
     contact = create(:contact)
     company = contact.company
-    
+
     name = "Turtanator"
     email = "Schmeckles@gmail.com"
     position = "Exterminator"
@@ -17,6 +17,8 @@ describe "User creates new comment for job" do
     click_button "Create"
 
     expect(current_path).to eq "/companies/#{company.id}"
-    expect(page).to have_content "Turtles can comment too"
+    expect(page).to have_content name
+    expect(page).to have_content email
+    expect(page).to have_content position
   end
 end
