@@ -12,6 +12,13 @@ City: <%= @job.city %>
 
 Company: <%= link_to @job.company.name, company_path(@job.company) %>
 
+Contacts: <% @job.company.contacts.each do |contact| %>
+  <ul><%= contact.name %> <br>
+    <%= contact.position%><br>
+    <%= contact.email %><br>
+  </ul>
+<% end %>
+
 Comments: <% @comments.each do |comment| %>
   <ul> <%=comment.content%><br/>
   </ul>
