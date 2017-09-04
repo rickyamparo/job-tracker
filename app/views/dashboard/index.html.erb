@@ -2,9 +2,6 @@ This is the Dashboard for your JobTracker
 
 Job Count by level of interest:
 
-<% @jobs.each do |job| %>
-  <ul><%= job.title %> at <%= job.company.name %><br />
-    <%= link_to "Edit", edit_company_job_path(job.company, job) %>
-    <%= link_to "Delete", company_job_path(job.company, job), method: "delete" %>
-  </ul>
+<% @jobs_by_interest.each do |interest_level| %>
+  The interest level of <%= interest_level[0] %> has <%= interest_level[1] %>jobs.<br />
 <% end %>
