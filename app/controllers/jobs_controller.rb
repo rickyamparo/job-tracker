@@ -8,6 +8,11 @@ class JobsController < ApplicationController
     end
   end
 
+  def location
+    @jobs = Job.city_jobs(params[:city])
+    @city = params[:city]
+  end
+
   def new
     @company = Company.find(params[:company_id])
     @job = Job.new()

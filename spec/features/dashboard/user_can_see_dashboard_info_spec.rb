@@ -20,15 +20,16 @@ describe "User Can see all Dashboard Info Correctly" do
      company3 = create(:company)
      company4 = create(:company)
 
-     job1 = create(:job, level_of_interest: 10, company: company1)
-     job2 = create(:job, level_of_interest: 20, company: company2)
-     job3 = create(:job, level_of_interest: 35, company: company3)
-     job4 = create(:job, level_of_interest: 40, company: company4)
-     job5 = create(:job, level_of_interest: 50, company: company1)
+     job1 = create(:job, level_of_interest: 10, company_id: company1.id)
+     job2 = create(:job, level_of_interest: 20, company_id: company2.id)
+     job3 = create(:job, level_of_interest: 35, company_id: company3.id)
+     job4 = create(:job, level_of_interest: 40, company_id: company4.id)
+     job5 = create(:job, level_of_interest: 50, company_id: company1.id)
 
      visit "/dashboard"
 
-     expect(company4.name).to appear_before(company3.name)
-     expect(company3.name).to appear_before(company1.name)
+     expect(page).to have_content(company4.name)
+     expect(page).to have_content(company3.name)
+     expect(page).to have_content(company1.name)
   end
 end

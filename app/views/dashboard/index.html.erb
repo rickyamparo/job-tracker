@@ -11,3 +11,9 @@ Job Count by level of interest: <br> <br>
 <% @jobs_by_interest.each do |interest_level| %>
   The interest level of <%= interest_level[0] %> has <%= interest_level[1] %> job(s).<br />
 <% end %>
+<br>
+Job Count by City: <br>
+
+<% @jobs_by_city.each do |city| %>
+  <%= link_to "#{city[0]}", jobs_path(:city => "#{city[0]}") %> has <%= city[1] %> jobs.<br />
+<% end %>

@@ -1,0 +1,5 @@
+These are all the jobs for <%= @city %>: <br>
+
+<% @jobs.each do |job| %> <br>
+  <%= job.title %> at <%= job.company.name %> in <%= job.city %> <br>
+<% end %><br>
