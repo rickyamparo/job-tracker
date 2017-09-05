@@ -1,7 +1,7 @@
 This is the Dashboard for your JobTracker
 
-Job Count by level of interest:
+Job Count by level of interest: <br>
 
 <% @jobs_by_interest.each do |interest_level| %>
-  The interest level of <%= interest_level[0] %> has <%= interest_level[1] %>jobs.<br />
+  The interest level of <%= interest_level[0] %> has <%= interest_level[1] %> job(s).<br />
 <% end %>

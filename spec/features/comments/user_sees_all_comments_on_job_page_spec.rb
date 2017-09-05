@@ -11,7 +11,7 @@ describe "User sees all comments on job page" do
     expect(page).to have_content(comment.content)
   end
 
-  scenario "a user sees all comments descneding in proper order" do
+  scenario "a user sees all comments descending in proper order" do
     job = create(:job)
     company = Company.find(job.company_id)
     comment1 = job.comments.create(content: "This is a comment 1")

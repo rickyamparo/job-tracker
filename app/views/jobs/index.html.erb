@@ -1,7 +1,7 @@
 All Jobs for <strong><%= @company.name %></strong>
 
 <% @jobs.each do |job| %>
-  <ul><%= job.title %> at <%= job.company.name %><br />
+  <ul><%= job.title %> at <%= job.company.name %> in <%= job.city %> <br />
     <%= link_to "Edit", edit_company_job_path(job.company, job) %>
     <%= link_to "Delete", company_job_path(job.company, job), method: "delete" %>
   </ul>
