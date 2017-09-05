@@ -9,11 +9,11 @@ class Job < ApplicationRecord
   end
 
   def self.jobs_by_interest
-    group(:level_of_interest).count
+    order(:level_of_interest).group(:level_of_interest).count
   end
 
   def self.top_3_companies
-    
+    Job.group(:company_id).average('level_of_interest').invert.max(3)
   end
 
 end

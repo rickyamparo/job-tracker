@@ -1,6 +1,12 @@
 This is the Dashboard for your JobTracker
 
-Job Count by level of interest: <br>
+Top 3 companies by interest level: <br>
+<br>
+<% @top_3_companies.each do |top_company| %>
+  The average interest level of <%= Company.find(top_company[1]).name %> is <%= top_company[0] %><br />
+<% end %><br>
+
+Job Count by level of interest: <br> <br>
 
 <% @jobs_by_interest.each do |interest_level| %>
   The interest level of <%= interest_level[0] %> has <%= interest_level[1] %> job(s).<br />
